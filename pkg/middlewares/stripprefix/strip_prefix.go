@@ -96,7 +96,7 @@ func (s *stripPrefix) getPathStripped(urlPath, prefix string) string {
 		return "/" + strings.TrimPrefix(strings.TrimPrefix(urlPath, prefix), "/")
 	}
 
-	return ensureLeadingSlash(strings.TrimPrefix(urlPath, prefix))
+	return strings.TrimPrefix(urlPath, prefix)
 }
 
 func (s *stripPrefix) getRawPathStripped(rawPath, prefix string) string {
